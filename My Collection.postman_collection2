@@ -1,0 +1,789 @@
+{
+	"info": {
+		"_postman_id": "6f78fcdf-af34-4f19-aa63-498c13cf7403",
+		"name": "My Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12383057"
+	},
+	"item": [
+		{
+			"name": "Get Lists",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log(\"Пошук Lists через curl\")"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://api.clickup.com/api/v2/folder/90156767371/list",
+					"protocol": "https",
+					"host": [
+						"api",
+						"clickup",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"folder",
+						"90156767371",
+						"list"
+					]
+				},
+				"description": "Generated from cURL: curl --request GET \\\n     --url https://api.clickup.com/api/v2/folder/90156767371/list \\\n     --header 'Authorization: pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ' \\\n     --header 'accept: application/json'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lists",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.environment.set(\"назва_моєї_змінної\", pm.response.json().id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{my_token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/list/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"list",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "901510829589"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.environment.set(\"variable_key\", \"variable_value\");\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{my_token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"folder_id\":\"90156767371\",\r\n    \"name\":\"updated {{$randomFirstName}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/folder/90156767371/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"folder",
+						"90156767371",
+						"list"
+					],
+					"query": [
+						{
+							"key": "folder_id",
+							"value": "901510871303",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Generated from cURL: curl --request POST \\\n     --url https://api.clickup.com/api/v2/folder//list \\\n     --header 'Authorization: pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ' \\\n     --header 'accept: application/json' \\\n     --header 'content-type: application/json'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lists",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.environment.get(\"назва_моєї_змінної\");"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"назва_моєї_змінної\");"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{my_token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/folder/90156767371/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"folder",
+						"90156767371",
+						"list"
+					]
+				},
+				"description": "Generated from cURL: curl --request GET \\\n     --url https://api.clickup.com/api/v2/folder//list \\\n     --header 'accept: application/json'"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"назва_моєї_змінної\");\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{my_token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"list_id\":{{назва_моєї_змінної}},\r\n    \"Content-Type\": \"application/json\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/list/{{назва_моєї_змінної}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"list",
+						"{{назва_моєї_змінної}}"
+					]
+				},
+				"description": "Generated from cURL: curl --request DELETE \\\n     --url https://api.clickup.com/api/v2/list/901510829979 \\\n     --header 'Authorization: pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ' \\\n     --header 'Content-Type: application/json' \\\n     --header 'accept: application/json'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{my_token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/list/901510871303",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"list",
+						"901510871303"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create List Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{my_token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"folder_id\":\"90156767371\",\r\n    \"name\": \"updated {{$randomFirstName}}\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/folder/90156767371/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"folder",
+						"90156767371",
+						"list"
+					]
+				},
+				"description": "Generated from cURL: curl --request POST \\\n     --url https://api.clickup.com/api/v2/folder//list \\\n     --header 'Authorization: pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ' \\\n     --header 'accept: application/json' \\\n     --header 'content-type: application/json'"
+			},
+			"response": []
+		},
+		{
+			"name": "Update List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{my_token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n\"name\": \"updated {{$randomFirstName}}\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/list/901510829979",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"list",
+						"901510829979"
+					]
+				},
+				"description": "Generated from cURL: curl --request PUT \\\n     --url https://api.clickup.com/api/v2/list/901510829979 \\\n     --header 'Authorization: pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ' \\\n     --header 'accept: application/json' \\\n     --header 'content-type: application/json' \\\n     --data '\n{\n  \"due_date_time\": true,\n  \"unset_status\": true\n}\n'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lists Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body include List_test\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"List_test\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{my_token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/folder/90156767371/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"folder",
+						"90156767371",
+						"list"
+					]
+				},
+				"description": "Generated from cURL: curl --request GET \\\n     --url https://api.clickup.com/api/v2/folder//list \\\n     --header 'accept: application/json'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lists Copy 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"console.log(\"Запуск без авторизації\")"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/folder/90156767371/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"folder",
+						"90156767371",
+						"list"
+					]
+				},
+				"description": "Generated from cURL: curl --request GET \\\n     --url https://api.clickup.com/api/v2/folder//list \\\n     --header 'accept: application/json'"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete List Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"list_id\":\"01510871303\",\r\n    \"Content-Type\": \"application/json\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/list/901510871303",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"list",
+						"901510871303"
+					]
+				},
+				"description": "Generated from cURL: curl --request DELETE \\\n     --url https://api.clickup.com/api/v2/list/901510829979 \\\n     --header 'Authorization: pk_188586348_VZKFE8R6B1JLNASCXOM0QLDLLYOG7FZZ' \\\n     --header 'Content-Type: application/json' \\\n     --header 'accept: application/json'"
+			},
+			"response": []
+		}
+	]
+}
